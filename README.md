@@ -1,0 +1,1 @@
+This repository includes the assignment: Implement Firebase into React E-Commerce App in Module 13 of the Front-End Specialization.

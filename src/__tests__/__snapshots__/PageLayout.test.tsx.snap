@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageLayout Component renders children and matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="p-0 container-fluid"
+  >
+    <div
+      class="col"
+    >
+      <div>
+        Mock NavBar
+      </div>
+    </div>
+    <div>
+      Mock Child Content
+    </div>
+  </div>
+</DocumentFragment>
+`;
