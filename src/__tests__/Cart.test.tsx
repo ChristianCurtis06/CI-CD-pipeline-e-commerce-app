@@ -30,6 +30,16 @@ describe('Cart Component', () => {
                         image: 'imageUrl',
                         quantity: 1,
                     },
+                    {
+                        id: 2,
+                        title: 'Pants',
+                        price: '19.99',
+                        category: 'clothing',
+                        description: 'Pants description',
+                        rating: { rate: 4.5, count: 150 },
+                        image: 'imageUrl',
+                        quantity: 1,
+                    }
                 ],
             },
         });
@@ -59,13 +69,17 @@ describe('Cart Component', () => {
     });
 
     test('changes product quantity successfully', async () => {
-        const { getByText} = render(
+        const { getByTestId } = render(
             <Provider store={store}>
                 <Cart />
             </Provider>
         );
 
-        fireEvent.change(screen.getByLabelText(/Quantity/i), { target: { value: '2' } })
+        const quantityInput = getByTestId('quantity-input-1');
+        expect(quantityInput).toBeInTheDocument();
+        
+        fireEvent.change(quantityInput, { target: { value: '2' } });
+
         await waitFor(() => {
             expect(store.dispatch).toHaveBeenCalledWith(updateProduct(
                 {

@@ -35,7 +35,7 @@ const Cart: React.FC = () => {
     const handleCheckout = () => {
         dispatch(clearCart());
         navigate("/");
-        alert(`You have been checked out! Your cart has been emptied.`);
+        alert('You have been checked out! Your cart has been emptied.');
     };
 
     useEffect(() => {
@@ -55,7 +55,7 @@ const Cart: React.FC = () => {
                 <div className="my-3 bg-light rounded p-5 text-white">
                     {(productCount > 1 || productCount === 0) ? <p className="text-black">{productCount} Products in Cart</p> : <p className="text-black">{productCount} Product in Cart</p>}
                     {cart.map((product, index) => (
-                        <Card key={index} className="mb-4">
+                        <Card key={index} className="mb-4" data-testid={product.id}>
                             <Row>
                                 <Col md={2} className="d-flex justify-content-center align-items-center">
                                     <Card.Img style={{ objectFit: "contain", maxHeight: "150px" }} className="p-2" src={product.image} />
@@ -77,6 +77,7 @@ const Cart: React.FC = () => {
                                                         value={product.quantity || 1}
                                                         onChange={(e) => handleQuantityChange(product, parseInt(e.target.value))}
                                                         min="1"
+                                                        data-testid={`quantity-input-${product.id}`}
                                                     />
                                                 </FloatingLabel>
                                             </Col>

@@ -52,7 +52,7 @@ const HomePage: React.FC = () => {
                     <Row>
                         {displayProducts?.map(product => (
                             <Col sm={6} lg={4} key={product.id} className="mb-4">
-                                <Card className="h-100" data-testid={product.title}>
+                                <Card className="h-100" data-testid={product.id}>
                                     <Card.Img style={{ objectFit: "contain", maxHeight: "250px" }} className="mt-3 h-25" variant="top" src={product.image} />
                                     <Card.Body className="d-flex flex-column">
                                         <Card.Text className="mb-2 text-secondary" style={{ textTransform: "capitalize" }}>{product.category}</Card.Text>
@@ -60,7 +60,7 @@ const HomePage: React.FC = () => {
                                         <Card.Text className="mb-2">{product.rating.rate}⭐ ({product.rating.count} Reviews)</Card.Text>
                                         <Card.Title className="mb-3"><Badge bg="warning">${parseFloat(product.price).toFixed(2)}</Badge></Card.Title>
                                         <Card.Text className="">{product.description}</Card.Text>
-                                        <Button variant="warning" onClick={() => handleAddProduct(product)} className="mt-auto">Add to cart</Button>
+                                        <Button variant="warning" onClick={() => handleAddProduct(product)} className="mt-auto" data-testid={`add-product-${product.id}`}>Add to cart</Button>
                                     </Card.Body>
                                 </Card>
                             </Col>

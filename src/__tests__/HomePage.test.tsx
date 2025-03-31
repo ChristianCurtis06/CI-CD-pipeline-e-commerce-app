@@ -72,6 +72,8 @@ describe('HomePage Component', () => {
             },
         });
         store.dispatch = jest.fn();
+
+        window.alert = jest.fn();
     });
 
     test('renders products correctly', async () => {
@@ -88,7 +90,7 @@ describe('HomePage Component', () => {
     });
 
     test('adds product to user cart correctly', async () => {
-        const { getAllByText, getByTestId, getByRole, getByText } = render(
+        const { getAllByText, getByTestId } = render(
             <Provider store={store}>
                 <HomePage />
             </Provider>
@@ -96,8 +98,7 @@ describe('HomePage Component', () => {
 
         await waitFor(() => expect(getAllByText(/Shirt/i).length).toBeGreaterThan(0));
 
-        const productCard = getByTestId('Shirt');
-        const addToCartButton = productCard?.querySelector('button');
+        const addToCartButton = getByTestId('add-product-1');
         expect(addToCartButton).toBeInTheDocument();
 
         fireEvent.click(addToCartButton!);
