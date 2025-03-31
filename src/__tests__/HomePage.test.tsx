@@ -76,6 +76,16 @@ describe('HomePage Component', () => {
         window.alert = jest.fn();
     });
 
+    test('basic structure matches the snapshot', () => {
+        const { asFragment, getByText } = render(
+            <Provider store={store}>
+                <HomePage />
+            </Provider>
+        );
+
+        expect(asFragment()).toMatchSnapshot();
+    });
+
     test('renders products correctly', async () => {
         const { getAllByText} = render(
             <Provider store={store}>
@@ -90,18 +100,16 @@ describe('HomePage Component', () => {
     });
 
     test('adds product to user cart correctly', async () => {
-        const { getAllByText, getByTestId } = render(
+        const { getByTestId } = render(
             <Provider store={store}>
                 <HomePage />
             </Provider>
         );
 
-        await waitFor(() => expect(getAllByText(/Shirt/i).length).toBeGreaterThan(0));
-
         const addToCartButton = getByTestId('add-product-1');
         expect(addToCartButton).toBeInTheDocument();
 
-        fireEvent.click(addToCartButton!);
+        fireEvent.click(addToCartButton);
 
         await waitFor(() => {
             expect(store.dispatch).toHaveBeenCalledWith(

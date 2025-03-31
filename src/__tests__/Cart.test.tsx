@@ -3,7 +3,7 @@ import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { configureStore } from 'redux-mock-store';
 import '@testing-library/jest-dom';
-import { clearCart, updateProduct } from '../redux/cartSlice';
+import { clearCart, updateProduct, removeProduct } from '../redux/cartSlice';
 import Cart from '../components/Cart';
 
 jest.mock('react-router-dom', () => ({
@@ -93,6 +93,23 @@ describe('Cart Component', () => {
                     quantity: 2,
                 }
             ));
+        });
+    });
+
+    test('removes product successfully', async () => {
+        const { getByTestId } = render(
+            <Provider store={store}>
+                <Cart />
+            </Provider>
+        );
+
+        const removeFromCartButton = getByTestId('remove-product-1');
+        expect(removeFromCartButton).toBeInTheDocument();
+
+        fireEvent.click(removeFromCartButton);
+
+        await waitFor(() => {
+            expect(store.dispatch).toHaveBeenCalledWith(removeProduct(1));
         });
     });
 });

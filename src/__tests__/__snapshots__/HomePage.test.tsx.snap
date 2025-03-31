@@ -1,0 +1,234 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage Component basic structure matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="p-0 container-fluid"
+  >
+    <div
+      class="col"
+    >
+      <nav
+        class="navbar navbar-expand-lg navbar-dark bg-warning"
+      >
+        <div
+          class="container-fluid"
+        >
+          <a
+            class="text-white navbar-brand"
+            href="/"
+          >
+            STORE
+          </a>
+          <button
+            aria-controls="navbarNav"
+            aria-label="Toggle navigation"
+            class="navbar-toggler collapsed"
+            type="button"
+          >
+            <span
+              class="navbar-toggler-icon"
+            />
+          </button>
+          <div
+            class="navbar-collapse collapse"
+            id="navbarNav"
+          >
+            <div
+              class="ms-auto navbar-nav"
+            >
+              <a
+                class="nav-link"
+                data-rr-ui-event-key="/"
+                href="/"
+              >
+                Home
+              </a>
+              <a
+                class="nav-link"
+                data-rr-ui-event-key="/cart"
+                href="/cart"
+              >
+                Cart
+                <span
+                  class="ms-1 bg-white text-dark badge bg-primary"
+                >
+                  0
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div
+      class="container-fluid"
+    >
+      <div
+        class="my-3 bg-warning rounded p-5 text-white"
+      >
+        <h1>
+          Welcome to STORE!
+        </h1>
+        <p>
+          A one-stop-shop for everything you need...
+        </p>
+      </div>
+    </div>
+    <div
+      class="container"
+    >
+      <div
+        class="my-3"
+      >
+        <h2
+          class="display-5 mb-3"
+        >
+          Products
+        </h2>
+        <select
+          class="w-25 mb-3 form-select"
+        >
+          <option
+            value=""
+          >
+            Filter by category
+          </option>
+          <option
+            style="text-transform: capitalize;"
+            value="clothing"
+          >
+            clothing
+          </option>
+          <option
+            style="text-transform: capitalize;"
+            value="electronics"
+          >
+            electronics
+          </option>
+          <option
+            style="text-transform: capitalize;"
+            value="jewelery"
+          >
+            jewelery
+          </option>
+        </select>
+        <div
+          class="row"
+        >
+          <div
+            class="mb-4 col-lg-4 col-sm-6"
+          >
+            <div
+              class="h-100 card"
+              data-testid="1"
+            >
+              <img
+                class="card-img-top mt-3 h-25"
+                src="imageUrl"
+                style="object-fit: contain; max-height: 250px;"
+              />
+              <div
+                class="d-flex flex-column card-body"
+              >
+                <p
+                  class="mb-2 text-secondary card-text"
+                  style="text-transform: capitalize;"
+                >
+                  clothing
+                </p>
+                <div
+                  class="mb-2 card-title h5"
+                >
+                  Shirt
+                </div>
+                <p
+                  class="mb-2 card-text"
+                >
+                  5⭐ (250 Reviews)
+                </p>
+                <div
+                  class="mb-3 card-title h5"
+                >
+                  <span
+                    class="badge bg-warning"
+                  >
+                    $9.99
+                  </span>
+                </div>
+                <p
+                  class="card-text"
+                >
+                  Shirt description
+                </p>
+                <button
+                  class="mt-auto btn btn-warning"
+                  data-testid="add-product-1"
+                  type="button"
+                >
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="mb-4 col-lg-4 col-sm-6"
+          >
+            <div
+              class="h-100 card"
+              data-testid="2"
+            >
+              <img
+                class="card-img-top mt-3 h-25"
+                src="imageUrl"
+                style="object-fit: contain; max-height: 250px;"
+              />
+              <div
+                class="d-flex flex-column card-body"
+              >
+                <p
+                  class="mb-2 text-secondary card-text"
+                  style="text-transform: capitalize;"
+                >
+                  clothing
+                </p>
+                <div
+                  class="mb-2 card-title h5"
+                >
+                  Pants
+                </div>
+                <p
+                  class="mb-2 card-text"
+                >
+                  4.5⭐ (150 Reviews)
+                </p>
+                <div
+                  class="mb-3 card-title h5"
+                >
+                  <span
+                    class="badge bg-warning"
+                  >
+                    $19.99
+                  </span>
+                </div>
+                <p
+                  class="card-text"
+                >
+                  Pants description
+                </p>
+                <button
+                  class="mt-auto btn btn-warning"
+                  data-testid="add-product-2"
+                  type="button"
+                >
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

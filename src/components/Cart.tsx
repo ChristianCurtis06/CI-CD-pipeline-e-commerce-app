@@ -82,7 +82,7 @@ const Cart: React.FC = () => {
                                                 </FloatingLabel>
                                             </Col>
                                             <Col md={9} className="mt-sm-2 mt-md-0">
-                                                <Button variant="outline-warning" onClick={() => handleRemoveProduct(product.id)} className="h-100 w-100 mt-auto">Remove from cart</Button>
+                                                <Button variant="outline-warning" onClick={() => handleRemoveProduct(product.id)} className="h-100 w-100 mt-auto" data-testid={`remove-product-${product.id}`}>Remove from cart</Button>
                                             </Col>
                                         </Row>
                                     </Card.Body>
