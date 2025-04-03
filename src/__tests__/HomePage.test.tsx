@@ -106,7 +106,7 @@ describe('HomePage Component', () => {
             </Provider>
         );
 
-        const addToCartButton = getByTestId('add-product-1');
+        const addToCartButton = getByTestId('add-product-2');
         expect(addToCartButton).toBeInTheDocument();
 
         fireEvent.click(addToCartButton);
